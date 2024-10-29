@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "run webserver",
+            "type": "node-terminal",
+            "command": "sh .vscode/launch.sh",
+            "cwd": "${workspaceFolder}",
+            "request": "launch"
+        }
+    ]
+}

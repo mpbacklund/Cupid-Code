@@ -1,0 +1,465 @@
+#root {
+  margin: 0px;
+  height: 100vh;
+  flex-direction: column;
+  display: flex;
+}
+
+.content {
+  margin-left: 10px;
+  margin-right:10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100% - 80px);
+}
+
+:root {
+  --pink1: #F2EAED;
+  --pink2: #FDBCD3;
+  --pink3: #FF73A4;
+  --pink4: #D2004A;
+  --pink5: #6A0026; 
+  --blue1: #D3D7DA;
+  --blue2: #BDDFF8;
+  --blue3: #7CC6FF;
+  --blue4: #065A9A;
+  --blue5: #052E4E;
+}
+
+.navBar {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  padding: 16px;
+  background-color: var(--blue4);
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  will-change: filter;
+  transition: filter 300ms;
+  cursor: pointer;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--blue5));
+}
+.logo:active {
+  scale: 95%
+}
+
+.edit {
+  position: relative;
+  float: right;
+  width: 2em;
+  height: 2em;
+
+  text-align: center;
+}
+
+#logOutButton {
+  background-color: var(--pink4);
+  width: 120px;
+  height: 50px;
+  position: relative;
+  bottom: 0%;
+
+  font-weight: bolder;
+  font-style: italic;
+
+  text-align: center;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink5);
+  
+  margin: 32px;
+  transition: box-shadow 0.5s;
+}
+#logOutButton:hover {
+  box-shadow: 0px 0px 8px var(--pink5);
+}
+#logOutButton:active {
+  scale: 95%;
+}
+
+#panicButton {
+  background-color: var(--pink4);
+  width: 120px;
+  height: 50px;
+  position: relative;
+  font-weight: bolder;
+  font-style: italic;
+
+  text-align: center;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink5);
+
+  cursor: pointer;
+  transition: box-shadow 0.5s;
+}
+#panicButton:hover {
+  box-shadow: 0px 0px 8px var(--pink5);
+}
+#panicButton:active {
+  scale: 95%;
+}
+
+#panicText {
+  color: var(--blue2);
+  font-size: large;
+}
+
+.navDrawer {
+  background-color: var(--blue3);
+  color: var(--blue5);
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 300px;
+  z-index: 1;
+  justify-content: center;
+  transition: left 0.4s cubic-bezier(0.5, 0, 0.5, 1) .15s;
+}
+.navClosed {
+  left: -300px;
+}
+.navOpen {
+  left: 0px;
+}
+
+.navLocation {
+  margin: 100px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.navDrawerElement {
+  background-color: var(--blue3);
+  color: var(--blue5);
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 85%;
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.75s;
+}
+.navDrawerElement:hover {
+  background-color: var(--blue2);
+}
+
+#cashBox {
+  background-color: var(--blue3);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--blue5);
+
+  text-align: center;
+
+  position: relative;
+  left: 33%;
+  top: 20px;
+  width: 33%;
+  margin: 20px;
+}
+
+#cashButton {
+  background-color: var(--blue4);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--blue5);
+  
+  margin-bottom: 15px;
+  position: relative;
+  width: 40%;
+}
+
+#textOnBlueButton {
+  color: var(--pink1)
+}
+
+#centeredDiv {
+  text-align: center;
+}
+
+#interventionHeader {
+  color: var(--pink5);
+}
+
+#interventionInfo {
+  color: var(--blue5)
+}
+
+#interventionDescriptor {
+  background-color: var(--pink2);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink3);
+
+  text-align: center;
+  color: var(--blue5);
+
+  position: relative;
+  left: 33%;
+  width: 33%;
+}
+
+#userField  {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: fit-content;
+  margin-top: 20px;
+
+  background-color: var(--pink2);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink3);
+  
+  
+  overflow: hidden;
+  vertical-align: top;
+}
+
+#dataField {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  height: fit-content;
+  margin-top: 20px;
+
+  background-color: var(--pink2);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink3);
+  
+  overflow: hidden;
+  vertical-align: top;
+}
+
+#fieldText {
+  float: left;
+  width: fit-content;
+  margin-left: 1.5em;
+}
+
+#jobOverview {
+  background-color: var(--pink2);
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink3);
+}
+
+#textInput {
+  flex: 1;
+}
+
+#inputContainer {
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#submitMessageButton {
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#chatContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+#chatHistory {
+  overflow-y: scroll;
+  display: block;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+#chatHistory::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.chatMessage {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #f2f2f2; padding: 15px; max-width: 70%; width: fit-content;
+}
+
+.userMessage {
+  background-color: var(--blue3);;
+  margin-left: auto;
+}
+
+.aiResponse {
+  background-color: var(--pink2);
+  margin-right: auto;
+  min-height: 8px;
+}
+
+.typing__dot {
+  float: left;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  background: #5f5e61;
+  border-radius: 50%;
+  opacity: 0;
+  animation: loadingFade 1s infinite;
+}
+
+.typing__dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing__dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing__dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*Media query for screens with a width of 700 pixels or less
+Multiple elements can be redefined within this same media query*/
+@media only screen and (max-width: 700px) {
+  #cashBox {
+    position: relative;
+    top: 5%;
+    margin: 5%;
+    left: 5%;
+    width: 80%;
+  }
+}
+
+.popUpWrapper {
+  backdrop-filter: blur(8px);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.popUpClosed {
+  display: none;
+}
+.interventionPopUp {
+  padding: 16px;
+  border-radius: 8px;
+  border-color: var(--blue4);
+  border-width: 3px;
+  border-style: solid;
+  box-sizing: border-box;
+  background-color: var(--blue3);
+  color: var(--blue5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  font-size: 1em;
+  box-shadow: 0px 2px 8px var(--blue5);
+}
+@media only screen and (max-width: 700px) {
+  .interventionPopUp {
+    width: 95%;
+  }
+}
+#interTitle {
+  font-size: 2em;
+  font-style: italic;
+  margin: 4px;
+}
+#interButton {
+  background-color: var(--pink4);
+  color: var(--pink1);
+  width: 120px;
+  height: 50px;
+  position: relative;
+  bottom: 0%;
+
+  font-weight: bolder;
+  font-style: italic;
+
+  text-align: center;
+
+  border-radius: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: var(--pink5);
+  
+  margin: 8px;
+  transition: box-shadow 0.5s;
+}
+#interButton:hover {
+  box-shadow: 0px 0px 8px var(--pink5);
+}
+#interButton:active {
+  scale: 95%;
+}

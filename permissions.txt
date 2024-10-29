@@ -1,0 +1,9 @@
+core.view_self
+core.update_self
+core.view_site_stats
+core.view_financial_stats
+core.chat_with_ai
+core.get_dater_intervention
+core.create_intervention
+core.accept_intervention
+core.complete_intervention

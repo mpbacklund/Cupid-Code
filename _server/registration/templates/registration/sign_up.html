@@ -1,0 +1,33 @@
+{% extends "registration/base.html"%}
+
+{% block content %}
+<div class="wrapper">
+  <div>
+    <img alt="Cupid Code" src="/logo1.png"/>
+  </div>
+  <div class="sign-in-wrapper">
+    <div id="sign-up-message">{{ message }}</div>
+    <div class="error">{{ error }}</div>
+    <form action="{{ endpoint }}" method="post">
+      {% csrf_token %}
+      <div>
+        <label>
+          <input type="text" name="username" placeholder="Username">
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="email" name="email" placeholder="Email">
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="password" name="password" placeholder="Password">
+        </label>
+      </div>
+      <button>Create Account</button>
+    </form>
+    <a href="/registration/sign_in/">Back to Login</a>
+  </div>
+</div>
+{% endblock %}

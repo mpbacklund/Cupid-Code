@@ -1,0 +1,60 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Create Cupid Code Manager",
+            "type": "shell",
+            "command": "poetry run python ./_server/manage.py createmanager --username ${input:username} --email ${input:email}",
+            "options": {
+                "env": {
+                    "MANAGER_PASSWORD": "${input:password}"
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "revealProblems": "onProblem",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [{
+                "pattern": {
+                    "regexp": "^ERROR: (.*)$",
+                    "message": 1
+                }
+            }]
+        },
+        {
+          "label": "Reset Database",
+          "type": "shell",
+          "command": "rm _server/db.sqlite3 && poetry run python ./_server/manage.py migrate",
+          "problemMatcher": []
+        },
+        {
+          "label": "Make Migrations",
+          "type": "shell",
+          "command": "poetry run python ./_server/manage.py makemigrations",
+          "problemMatcher": []
+        },
+    ],
+    "inputs": [
+      {
+        "id": "username",
+        "type": "promptString",
+        "description": "Username"
+      },
+      {
+        "id": "email",
+        "type": "promptString",
+        "description": "Email",
+      },
+      {
+        "id": "password",
+        "type": "promptString",
+        "description": "Password",
+        "password": true
+      }
+    ]
+}

@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/heart.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cupid Code</title>
+  <style>
+      :root {
+        --pink1: #F2EAED;
+        --pink2: #FDBCD3;
+        --pink3: #FF73A4;
+        --pink4: #D2004A;
+        --pink5: #6A0026; 
+        --blue1: #D3D7DA;
+        --blue2: #BDDFF8;
+        --blue3: #7CC6FF;
+        --blue4: #065A9A;
+        --blue5: #052E4E;
+      }
+      html {
+        background-image: linear-gradient(var(--blue3), var(--blue4));
+      }
+      body {
+        background-image: url("/hearts.png");
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        z-index: -1;
+      }
+      html, input, button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+      }
+      #sign-up-message {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: large;
+        font-weight: bold;
+      }
+      img {
+        margin: 16px;
+        width: 300px;
+      }
+      .wrapper {
+        background-color: var(--pink1);
+        margin: 0px;
+        border-radius: 8px;
+        padding: 8px;
+        max-width: 90%;
+      }
+      body, .wrapper, .sign-in-wrapper, form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sign-in-wrapper {
+        background-color: var(--pink1);
+        justify-content: center;
+        border: 2px solid var(--blue5);
+        border-radius: 8px;
+        width: 550px;
+        height: 350px;
+        max-width: 100%;
+      }
+      form {
+        margin: 16px;
+      }
+      input {
+        background-color: var(--pink1);
+        margin: 8px;
+        border: 1px solid var(--blue5);
+        border-radius: 4px;
+        padding: 8px;
+      }
+      input::placeholder {
+        color: var(--blue5);
+        opacity: 0.5;
+      }
+      button {
+        background-color: var(--pink5);
+        color: var(--pink1);
+        margin: 4px;
+        border: 0;
+        border-radius: 32px;
+        padding: 8px;
+        width: 80%;
+        cursor: pointer;
+      }
+      a {
+        margin: 4px;
+      }
+      .error{
+        margin: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: larger;
+        background-color: var(--pink4);
+        color: var(--pink1);
+      }
+      .error:empty{
+        display: none;
+      }
+  </style>
+</head>
+<body>
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
