@@ -1,16 +1,23 @@
 # Development Environment Setup
 
-1. [Set up Docker Dev Containers for VSCode](https://code.visualstudio.com/docs/devcontainers/containers#_installation)
+1. Set up a `.env` file in the folder _server. This file should follow the following format:
+```
+ASSET_URL=http://localhost:5173
+OPENAI_API_KEY = # Your OpenAI Key
+GOOGLE_MAPS_API_KEY = # Your Google Maps API Key
+```
 
-2. Open the local repository in VSCode
+2. [Set up Docker Dev Containers for VSCode](https://code.visualstudio.com/docs/devcontainers/containers#_installation)
 
-3. Run `Rebuild and Reopen in Container` in the VSCode Command Palette (press `F1` or `Ctrl+Shift+P` to open)
+3. Open the local repository in VSCode
+
+4. Run `Rebuild and Reopen in Container` in the VSCode Command Palette (press `F1` or `Ctrl+Shift+P` to open)
 
     VSCode will automatically sync Python dependencies using Poetry and Node dependencies using npm. It will also run Django migrations each time the Docker container is rebuilt. Keep the Django migrations up-to-date using `poetry run python manage.py makemigrations` each time you make changes to models. This will create migrations that should be committed to the git repository.
 
-4. Press `F5` to start Node and Django after the container is ready
+5. Press `F5` to start Node and Django after the container is ready
 
-5. Navigate to [http://localhost:8000/]
+6. Navigate to [http://localhost:8000/]
 
     NOTE: If you are currently logged in to cupid code, using port `5173` instead of `8000` will also render the user pages. You will not be able to access the log in page from port `5173`, though.
 
